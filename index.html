@@ -1,182 +1,241 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ELVAR Protocol</title>
-<meta name="description" content="ELVAR is a community-driven meme coin on BNB Smart Chain. Fixed supply. No promises. No hype. Just community." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ELVAR Protocol</title>
+  <meta name="description" content="ELVAR is a community-driven meme coin on BNB Smart Chain. Fixed supply. No hype. Just transparency and community momentum." />
 
-<style>
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
-  background:radial-gradient(circle at top,#0f1b3d,#050914);
-  color:#ffffff;
-  text-align:center;
-}
-.container{
-  max-width:1100px;
-  margin:0 auto;
-  padding:90px 20px;
-}
-h1{
-  font-size:64px;
-  letter-spacing:3px;
-  margin-bottom:10px;
-}
-h2{
-  font-weight:400;
-  color:#8fb3ff;
-  margin-bottom:50px;
-}
-.section{
-  margin-top:80px;
-}
-.card{
-  background:rgba(255,255,255,0.05);
-  border-radius:22px;
-  padding:40px;
-  margin-bottom:30px;
-  backdrop-filter:blur(10px);
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-}
-.stat{
-  padding:35px;
-  border-radius:20px;
-  background:rgba(255,255,255,0.06);
-}
-.stat h3{
-  font-size:42px;
-  margin:0;
-  color:#9ec1ff;
-}
-.stat p{
-  margin-top:10px;
-  letter-spacing:1px;
-  color:#ccc;
-}
-.feature{
-  padding:30px;
-  border-radius:18px;
-  background:rgba(255,255,255,0.04);
-}
-.feature h4{
-  margin-bottom:10px;
-  color:#9ec1ff;
-}
-.btns{
-  margin-top:50px;
-}
-a.btn{
-  display:inline-block;
-  padding:14px 26px;
-  margin:10px;
-  border-radius:999px;
-  text-decoration:none;
-  color:#fff;
-  background:#1b3cff;
-}
-a.secondary{
-  background:rgba(255,255,255,0.12);
-}
-footer{
-  margin-top:100px;
-  font-size:14px;
-  color:#888;
-}
-</style>
+  <style>
+    :root{
+      --bg:#0b0f1a;
+      --bg-soft:#121833;
+      --card:#1a2147;
+      --primary:#8aa4ff;
+      --text:#ffffff;
+      --muted:#aab1d6;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:radial-gradient(1200px 600px at 50% -200px,#1c2455 0%,var(--bg) 60%);
+      color:var(--text);
+      text-align:center;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:100px 20px;
+    }
+
+    /* HERO */
+    h1{
+      font-size:72px;
+      letter-spacing:4px;
+      margin:0 0 10px;
+    }
+
+    h2{
+      font-weight:400;
+      color:var(--primary);
+      margin-bottom:50px;
+    }
+
+    /* CARD */
+    .card{
+      background:linear-gradient(180deg,#1b2454,#121833);
+      border-radius:22px;
+      padding:40px;
+      box-shadow:0 20px 60px rgba(0,0,0,.4);
+      margin-bottom:60px;
+    }
+
+    .card p{
+      font-size:18px;
+      line-height:1.7;
+      color:#e6e9ff;
+    }
+
+    /* SECTIONS */
+    .section{
+      margin-top:80px;
+    }
+
+    .section h3{
+      font-size:32px;
+      margin-bottom:30px;
+      letter-spacing:1px;
+    }
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:24px;
+    }
+
+    .box{
+      background:var(--card);
+      border-radius:18px;
+      padding:30px;
+      box-shadow:0 15px 40px rgba(0,0,0,.35);
+    }
+
+    .box strong{
+      font-size:36px;
+      color:var(--primary);
+    }
+
+    .box span{
+      display:block;
+      margin-top:10px;
+      color:var(--muted);
+      letter-spacing:1px;
+    }
+
+    /* LIST */
+    ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+
+    li{
+      padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      color:#e6e9ff;
+    }
+
+    /* BUTTONS */
+    .buttons{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:18px;
+      margin-top:40px;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:600;
+      transition:.25s;
+      border:1px solid transparent;
+    }
+
+    .btn.primary{
+      background:linear-gradient(135deg,#8aa4ff,#6f86ff);
+      color:#0b0f1a;
+    }
+
+    .btn.secondary{
+      background:transparent;
+      border-color:#3a4590;
+      color:#e6e9ff;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 30px rgba(0,0,0,.4);
+    }
+
+    footer{
+      margin-top:120px;
+      padding:40px 20px;
+      font-size:14px;
+      color:#777fae;
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <div class="container">
 
-<h1>ELVAR</h1>
-<h2>Community-Driven Meme Coin</h2>
+    <!-- HERO -->
+    <h1>ELVAR</h1>
+    <h2>Community-Driven Meme Coin</h2>
 
-<div class="card">
-<p>
-ELVAR is a community-driven meme coin built on <b>BNB Smart Chain</b>.
-No hype cycles. No artificial narratives. No promises.
-</p>
-<p>
-Just transparency, fixed supply, and organic community momentum.
-</p>
-</div>
+    <!-- ABOUT -->
+    <div class="card">
+      <p>
+        <strong>ELVAR</strong> is a community-driven meme coin built on <strong>BNB Smart Chain</strong>.
+        <br><br>
+        No promises. No roadmap hype. No artificial narratives.
+        <br><br>
+        Just <strong>transparency</strong>, <strong>fixed supply</strong>,
+        and organic <strong>community momentum</strong>.
+      </p>
+    </div>
 
-<div class="section">
-<div class="grid">
-<div class="stat">
-<h3>50M</h3>
-<p>TOTAL SUPPLY</p>
-</div>
-<div class="stat">
-<h3>10M</h3>
-<p>CIRCULATING</p>
-</div>
-<div class="stat">
-<h3>40M</h3>
-<p>LOCKED</p>
-</div>
-</div>
-</div>
+    <!-- WHY -->
+    <div class="section">
+      <h3>Why ELVAR?</h3>
+      <div class="grid">
+        <div class="box">
+          <strong>100%</strong>
+          <span>Fixed Supply</span>
+        </div>
+        <div class="box">
+          <strong>No</strong>
+          <span>Privileged Access</span>
+        </div>
+        <div class="box">
+          <strong>On-Chain</strong>
+          <span>Transparency</span>
+        </div>
+        <div class="box">
+          <strong>Market</strong>
+          <span>Decides Everything</span>
+        </div>
+      </div>
+    </div>
 
-<div class="section">
-<div class="grid">
-<div class="feature">
-<h4>Fixed Supply</h4>
-<p>No minting. No inflation. Supply is immutable.</p>
-</div>
-<div class="feature">
-<h4>Market Driven</h4>
-<p>No price control. No intervention. The market decides.</p>
-</div>
-<div class="feature">
-<h4>Transparency</h4>
-<p>On-chain visibility. Simple structure. Clear rules.</p>
-</div>
-<div class="feature">
-<h4>Community First</h4>
-<p>No roadmap hype. No VC influence. Just community.</p>
-</div>
-</div>
-</div>
+    <!-- TOKENOMICS -->
+    <div class="section">
+      <h3>Tokenomics</h3>
+      <div class="grid">
+        <div class="box">
+          <strong>50M</strong>
+          <span>Total Supply</span>
+        </div>
+        <div class="box">
+          <strong>10M</strong>
+          <span>Circulating</span>
+        </div>
+        <div class="box">
+          <strong>40M</strong>
+          <span>Locked</span>
+        </div>
+      </div>
+    </div>
 
-<div class="section card">
-<h3>Why ELVAR?</h3>
-<p>
-Most projects fail because they promise too much.
-ELVAR exists because it promises nothing.
-</p>
-<p>
-No expectations. No pressure. No manipulation.
-Only participation.
-</p>
-</div>
+    <!-- COMMUNITY -->
+    <div class="section">
+      <h3>Community First</h3>
+      <div class="card">
+        <ul>
+          <li>No minting, no inflation</li>
+          <li>No admin intervention</li>
+          <li>No hidden mechanics</li>
+          <li>Pure community participation</li>
+        </ul>
 
-<div class="section card">
-<h3>Locked Supply</h3>
-<p>
-40M ELVAR tokens are locked to ensure long-term stability
-and to prevent sudden supply shocks.
-</p>
-<p>
-Transparency over speculation. Structure over hype.
-</p>
-</div>
+        <div class="buttons">
+          <a class="btn primary" href="https://x.com/elvarprotocol" target="_blank">X / Twitter</a>
+          <a class="btn secondary" href="https://t.me/elvarcommunity" target="_blank">Telegram</a>
+        </div>
+      </div>
+    </div>
 
-<div class="btns">
-<a class="btn" href="https://x.com/elvarprotocol" target="_blank">X / Twitter</a>
-<a class="btn secondary" href="https://t.me/elvarcommunity" target="_blank">Telegram</a>
-</div>
+    <footer>
+      © 2026 ELVAR Protocol • This is a meme coin, not financial advice.
+    </footer>
 
-<footer>
-© 2026 ELVAR Protocol • This is a meme coin, not financial advice.
-</footer>
-
-</div>
+  </div>
 </body>
 </html>
